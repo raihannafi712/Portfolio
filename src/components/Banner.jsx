@@ -99,18 +99,18 @@ const Banner = () => {
     }),
     [],
   );
-  if (init) {
+  if (!init) return null;
 
   return (
-    <section className="bg-black">
-      <div className="absolute top-0 left-0 w-full h-full z-[50]">
+    <section className="relative bg-black ">
+      <div className="absolute top-0 left-0 w-full h-[50%] !overflow-hidden z-[1]">
         <Particles
           id="tsparticles"
           particlesLoaded={particlesLoaded}
           options={options}
         />
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center z-[2] ">
         <div className="relative">
           <div className="flex justify-center">
             <img src={banner} alt="banner" className="max-w-[60%]  "  />
@@ -154,13 +154,13 @@ const Banner = () => {
               />
             </p>
           </div>
-          <button type="button" class="absolute top-[366px] left-[844px] z-10 font-rob text-white bg-red-600 text-[16px] hover:bg-transparent hover:border-red-500 border-[1px] border-transparent hover:border-[1px] duration-300 ease-in-out rounded-[30px]  px-[50px] py-[15px] text-center">
+          <button type="button" className="absolute top-[390px] left-[844px] z-10 font-rob text-white bg-red-600 text-[16px] hover:bg-transparent hover:border-red-500 border-[1px] border-transparent hover:border-[1px] duration-300 ease-in-out rounded-[30px]  px-[50px] py-[15px] text-center">
             Contact me
           </button>
         </div>
       </div>
     </section>
-  )}
+  )
 };
 
 export default Banner;
